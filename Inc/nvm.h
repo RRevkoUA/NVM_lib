@@ -9,6 +9,12 @@
 //Include here you STM32
 #include "stm32f103xe.h"
 
+
+// Macros to enable/disable global interrupts
+#define enable_interrupts() asm(" cpsie i ")
+#define disable_interrupts() asm(" cpsid i ")
+
+
 #define OPEN_FLASH          FLASH->KEYR = 0x45670123;\
                             FLASH->KEYR = 0xCDEF89AB;
 
